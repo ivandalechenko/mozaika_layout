@@ -56,9 +56,27 @@ body {
   width: 1400px;
   margin: 0 auto;
 }
+@media (max-width: 1450px) {
+  .container {
+    width: 100%;
+    padding: 0px 15px;
+  }
+}
 
 .how_to_element {
+  margin-top: 50px;
   display: flex;
+}
+.how_to_element button {
+  width: 240px;
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4), inset 0px 0px 0px rgba(0, 0, 0, 0.4);
+  background-color: #F7F7F7;
+}
+.how_to_element button:hover {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4), inset 0px 0px 10px rgba(0, 0, 0, 0.4);
+  opacity: 1;
 }
 .how_to_element .text .bold {
   font-weight: 600;
@@ -67,23 +85,157 @@ body {
   display: flex;
   justify-content: right;
   margin: auto 0;
-  width: 625px;
+  width: 45%;
 }
 .how_to_element .first_col .text {
   text-align: right;
 }
 .how_to_element .second_col {
-  width: 150px;
+  width: 10%;
   display: flex;
   justify-content: center;
   margin: auto 0;
+}
+.how_to_element .second_col .svg {
+  width: 0px;
+  height: 70px;
+  position: relative;
+  left: 35px;
+}
+.how_to_element .second_col .svg svg {
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+.how_to_element .second_col .svg svg circle {
+  stroke-dasharray: 17px;
+  stroke-dashoffset: 0px;
+  stroke-linecap: round;
+  animation: 4s ease-in-out 0s infinite alternate circle_num_anim;
+}
+@keyframes circle_num_anim {
+  100% {
+    stroke-dasharray: 17px;
+    stroke-dashoffset: 17px;
+  }
+}
+.how_to_element .second_col .text {
+  margin: auto;
+  font-size: 32px;
+  font-weight: 600;
 }
 .how_to_element .third_col {
   display: flex;
   margin: auto 0;
   justify-content: left;
-  width: 625px;
+  width: 45%;
 }
 .how_to_element .third_col .text {
   text-align: left;
+}
+
+.demo {
+  width: 0px;
+  height: 0px;
+  position: relative;
+  top: 20px;
+  animation: 10s ease-in-out infinite alternate demo_anim;
+}
+@keyframes demo_anim {
+  100% {
+    transform: rotateY(20deg) skew(4deg);
+  }
+}
+.demo .fone {
+  height: 0px;
+  width: 0px;
+  position: relative;
+  z-index: 1;
+}
+.demo .fone img {
+  width: 280px;
+}
+.demo .img {
+  height: 0px;
+  width: 0px;
+  position: relative;
+  z-index: 2;
+  top: 45px;
+  left: 26px;
+}
+.demo .img img {
+  transform: perspective(507px) rotateY(35deg);
+  width: 275px;
+}
+.demo #demo_1_img {
+  animation: 12s ease-in-out infinite normal demo_1_img_anim;
+  transition: 0.2;
+}
+@keyframes demo_1_img_anim {
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.demo #demo_2_img {
+  animation: 12s ease-in-out infinite normal demo_2_img_anim;
+  transition: 0.2;
+  opacity: 0;
+}
+@keyframes demo_2_img_anim {
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.demo #demo_3_img {
+  animation: 12s ease-in-out infinite normal demo_3_img_anim;
+  transition: 0.2;
+  opacity: 0;
+}
+@keyframes demo_3_img_anim {
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
