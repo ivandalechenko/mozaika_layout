@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap')
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section
@@ -42,11 +42,46 @@ body
     background-color: #F7F7F7
 
 .container
-    width: 1400px
+    width: 650px
+    height: 650px
     margin: 0 auto
-    @media (max-width: 1450px)
-        width: 100%
-        padding: 0px 15px
+    margin-top: 20px
+    padding: 20px
+    overflow: hidden
+
+.cont_anim
+    animation: cont_anim 2s 0s ease-out
+    animation-fill-mode: forwards
+    @keyframes cont_anim
+        20%
+            box-shadow: inset 0px 0px 20px rgba(0,0,0,0.4)
+        50%
+            box-shadow: inset 0px 0px 20px rgba(0,0,0,0.4), 0px 0px 0px rgba(0,0,0,0)
+        100%
+            box-shadow: inset 0px 0px 0px rgba(0,0,0,0), 0px 0px 20px rgba(0,0,0,0.4)
+
+.hide_to_up_anim
+    animation: hide_to_up_anim 1.5s 0s ease-in-out !important
+    animation-fill-mode: forwards !important
+    @keyframes hide_to_up_anim
+        99%
+            top: -500px
+        100%
+            top: -500px
+            display: none
+
+.hide_to_down_anim
+    animation: hide_to_down_anim 1.5s 0s ease-in-out
+    animation-fill-mode: forwards
+    @keyframes hide_to_down_anim
+        0%
+            top: 0px
+        99%
+            top: 500px
+        100%
+            top: 500px
+            display: none
+
 .how_to_element
     margin-top: 50px
     display: flex
@@ -109,6 +144,7 @@ body
     position: relative
     top: 20px
     animation: 10s ease-in-out infinite alternate demo_anim
+    transition: 0.5s
     @keyframes demo_anim
         100%
             transform: rotateY(20deg) skew(4deg)
@@ -182,3 +218,102 @@ body
             opacity: 0
         100%
             opacity: 0
+
+.first_row
+    display: flex
+    justify-content: center
+    column-gap: 300px
+    padding-right: 280px
+    .images
+        padding-top: 60px
+        animation: 8s ease-in-out infinite alternate images_anim
+        @keyframes images_anim
+            100%
+                transform: rotateY(-10deg) skew(-2deg)
+        #s_1_img
+            animation: 12s ease-in-out infinite normal s_1_img_anim
+            transition: 0.2
+        @keyframes s_1_img_anim
+            20%
+                opacity: 1
+            30%
+                opacity: 0
+            50%
+                opacity: 0
+            60%
+                opacity: 0
+            90%
+                opacity: 0
+            100%
+                opacity: 1
+
+        #s_2_img
+            animation: 12s ease-in-out infinite normal s_2_img_anim
+            transition: 0.2
+            opacity: 0
+        @keyframes s_2_img_anim
+            20%
+                opacity: 0
+            30%
+                opacity: 0
+            50%
+                opacity: 0
+            60%
+                opacity: 1
+            90%
+                opacity: 1
+            100%
+                opacity: 0
+
+        #s_3_img
+            animation: 12s ease-in-out infinite normal s_3_img_anim
+            transition: 0.2
+            opacity: 0
+        @keyframes s_3_img_anim
+            20%
+                opacity: 0
+            30%
+                opacity: 1
+            50%
+                opacity: 1
+            60%
+                opacity: 0
+            90%
+                opacity: 0
+            100%
+                opacity: 0
+        .img
+            width: 0px
+            height: 0px
+            img
+                width: 275px
+                height: 275px
+                box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2)
+
+.second_row
+    display: flex
+    justify-content: center
+    padding-top: 430px
+    button
+        border: 3px solid black
+        background: none
+        font-weight: 900
+        letter-spacing: 2px
+        font-size: 35px
+        padding: 20px 50px
+        position: relative
+        transition: .2s
+    button:hover
+        opacity: 1
+        color: white
+        background-color: black
+
+    .anim
+        animation: 2s ease-in-out infinite alternate btn_anim
+        letter-spacing: 2px
+
+        @keyframes btn_anim
+            0%
+                letter-spacing: 2px
+            100%
+                letter-spacing: 20px
